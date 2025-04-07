@@ -55,7 +55,7 @@ Loki is our log aggregation system. It's designed to be cost-effective and easy 
 
 **Data Flow:**
 
-* **Promtail Collection:** `promtail` agents run on our application pods, collecting log files.
+* **Promtail Collection:** `promtail` agents run on nodes to collect logs from application pods .
     * `Promtail` adds labels to the logs (e.g., pod name, namespace) for easy querying.
 * **Promtail to Loki:** `promtail` sends the logs to Loki.
     * In our setup, we have a `loki standalone` instance, meaning all Loki components run in a single process.

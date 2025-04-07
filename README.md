@@ -26,6 +26,9 @@ Tracing shows how it is happening.
 * **OpenTelemetry (OTel):** For standardizing and collecting telemetry data.
 * **Grafana:** For visualization and analysis of all this data.
 
+## Flow Diagram:- 
+![image](https://github.com/user-attachments/assets/a3bdecf3-05f8-49fa-97f1-3deb93fc8995)
+
 ## VictoriaMetrics and its Data Flow
 
 VictoriaMetrics is our go-to solution for metrics. 
@@ -43,6 +46,9 @@ VictoriaMetrics is our go-to solution for metrics.
     * These metrics are sent to `vm insert` via Prometheus remote write.
 * **Grafana:** We use Grafana to visualize the metrics from `vm select`, creating dashboards to monitor our applications and systems.
 
+
+To visit Victoria metrics helm chart [Click here](https://github.com/OT-CONTAINER-KIT/helm-charts/releases/tag/vm-0.0.1)
+
 ## Loki and its Data Flow
 
 Loki is our log aggregation system. It's designed to be cost-effective and easy to operate.
@@ -59,6 +65,8 @@ Loki is our log aggregation system. It's designed to be cost-effective and easy 
     * `loki results cache` speeds up query performance.
 * **Grafana:** We use Grafana to visualize and query the logs from Loki.
 
+To visit Loki helm chart [Click here](https://github.com/OT-CONTAINER-KIT/helm-charts/releases/tag/loki-1.0.1)
+
 ## Tempo
 
 Tempo is our distributed tracing backend. It helps us understand the flow of requests through our applications.
@@ -69,6 +77,9 @@ Tempo is our distributed tracing backend. It helps us understand the flow of req
 * **OTel Collector:** The `otel collector` receives and processes these traces.
 * **Tempo Standalone:** The `otel collector` sends the traces to `tempo standalone`, where they are stored.
 * **Grafana:** We use Grafana to visualize and analyze the traces from Tempo.
+
+To visit tempo helm chart [Click here](https://github.com/OT-CONTAINER-KIT/helm-charts/releases/tag/tempo-standalone-1.0.0)
+
 
 ## OpenTelemetry (OTel)
 
@@ -82,6 +93,8 @@ OpenTelemetry is a crucial part of our setup. It standardizes how we collect and
     * It also generates its own metrics for monitoring its health.
 * **OTel Webhook:** Used for receiving data via webhooks .
 * **OTel Metrics:** The collector's internal metrics, sent to VictoriaMetrics.
+
+To visit OTEL helm chart [Click here](https://github.com/OT-CONTAINER-KIT/helm-charts/releases/tag/otel-operator-1.0.0)
 
 ## How It All Fits Together:
 
